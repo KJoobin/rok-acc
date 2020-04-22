@@ -8,3 +8,6 @@
   padding: 10px;
   margin-bottom: 5px;
 }
+.TimeInput input {
+  width: 75px;
+}
