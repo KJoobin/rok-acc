@@ -21,11 +21,13 @@ const TimeInput = ({ type, index, value, onChange }) => {
         {hour && `${hour}시간`}
         {cal > 0 && `${cal}분`}
       </div>
-      <input
-        placeholder={TIME_NAME[index]}
-        onChange={e => onChange(type, index, e)}
-        value={value}
-      />
+      <div>
+        <input
+          placeholder={TIME_NAME[index]}
+          onChange={e => onChange(type, index, e)}
+          value={value}
+        />
+      </div>
     </div>
   );
 };

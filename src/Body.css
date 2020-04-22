@@ -1,6 +1,7 @@
 .TimeInput {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 5px;
 }
 .speed-input {
   text-align: center;

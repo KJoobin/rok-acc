@@ -93,9 +93,6 @@ class Speed extends Component {
           ))}
           <Calculate data={this.state.general} />
         </div>
-        <input onChange={e => this.changeConstructor(0, e)} type="text" />
-        <input onChange={e => this.changeResearch(0, e)} type="text" />
-        <input onChange={e => this.changeTraining(0, e)} type="text" />
       </div>
     );
   }
