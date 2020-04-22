@@ -1,0 +1,13 @@
+.Nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.Nav div {
+  background-color: rgb(46, 186, 116);
+  padding: 10px;
+}
+
+.Nav .on {
+  background-color: rgb(199, 106, 106);
+}
