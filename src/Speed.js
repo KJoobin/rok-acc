@@ -5,12 +5,13 @@ import Calculate from './Calculate';
 class Speed extends Component {
   constructor(props) {
     super(props);
+    const initialArray = ['', '', '', '', '', '', '', '', '', '', '', '', ''];
     this.state = {
-      constructor: ['', '', '', '', '', '', '', '', '', '', '', '', ''],
-      training: ['', '', '', '', '', '', '', '', '', '', '', '', ''],
-      research: ['', '', '', '', '', '', '', '', '', '', '', '', ''],
-      save: ['', '', '', '', '', '', '', '', '', '', '', '', ''],
-      general: ['', '', '', '', '', '', '', '', '', '', '', '', ''],
+      constructor: initialArray.slice(),
+      training: initialArray.slice(),
+      research: initialArray.slice(),
+      save: initialArray.slice(),
+      general: initialArray.slice(),
     };
     this.onChange = this.onChange.bind(this);
   }
@@ -27,7 +28,7 @@ class Speed extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Speed">
         <div className="speed-input">
           <div>건설가속</div>
           {this.state.constructor.map((el, index) => (

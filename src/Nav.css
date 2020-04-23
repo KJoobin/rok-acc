@@ -1,6 +1,7 @@
 .Nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  text-align: center;
 }
 
 .Nav div {
