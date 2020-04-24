@@ -18,6 +18,9 @@
   flex-direction: column;
   justify-content: center;
 }
+.Waiting div {
+  margin: 5px 0px;
+}
 .Waiting input {
   margin: 0px 10px;
   width: 40px;
@@ -32,6 +35,9 @@ input::placeholder {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 5px;
+  }
+  .Waiting div {
+    margin: 2px 0px;
   }
 }
 

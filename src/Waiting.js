@@ -37,7 +37,7 @@ class Waiting extends React.Component {
       <div className="Waiting">
         <div>계산기</div>
         <div>
-          <span>현제 걸리는 시간 : </span>
+          <span>현재 걸리는 시간 : </span>
           <input
             type="number"
             onChange={e => this.handleInput('days', e)}
@@ -54,7 +54,7 @@ class Waiting extends React.Component {
           <span>시간</span>
         </div>
         <div>
-          <span>현재 속도 버프</span>
+          <span>현재 속도</span>
           <input
             type="number"
             onChange={e => this.handleInput('cur', e)}
@@ -64,7 +64,7 @@ class Waiting extends React.Component {
           <span>%</span>
         </div>
         <div>
-          <span>추가 속도 버프</span>
+          <span>추가 속도</span>
           <input
             type="number"
             onChange={e => this.handleInput('add', e)}
