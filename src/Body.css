@@ -13,6 +13,20 @@
   width: 75px;
 }
 
+.Waiting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Waiting input {
+  margin: 0px 10px;
+  width: 40px;
+  text-align: end;
+}
+input::placeholder {
+  text-align: center;
+}
+
 @media (min-width: 800px) {
   .Speed {
     display: grid;

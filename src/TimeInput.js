@@ -23,6 +23,7 @@ const TimeInput = ({ type, index, value, onChange }) => {
       </div>
       <div>
         <input
+          type="number"
           placeholder={TIME_NAME[index]}
           onChange={e => onChange(type, index, e)}
           value={value}

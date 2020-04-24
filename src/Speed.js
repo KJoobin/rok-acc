@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TimeInput from './TimeInput';
 import Calculate from './Calculate';
+import Waiting from './Waiting';
 
 class Speed extends Component {
   constructor(props) {
@@ -18,9 +19,7 @@ class Speed extends Component {
 
   onChange(state, index, e) {
     const newGeneral = this.state[state].slice();
-    if (!Number.isNaN(Number(e.target.value))) {
-      newGeneral[index] = e.target.value;
-    }
+    newGeneral[index] = e.target.value;
     const newState = {};
     newState[state] = newGeneral;
     this.setState(newState);
@@ -93,6 +92,9 @@ class Speed extends Component {
             />
           ))}
           <Calculate data={this.state.general} />
+        </div>
+        <div className="speed-input">
+          <Waiting />
         </div>
       </div>
     );
