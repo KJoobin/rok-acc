@@ -15,6 +15,8 @@ class Speed extends Component {
       general: initialArray.slice(),
     };
     this.onChange = this.onChange.bind(this);
+    this.setSpeedData = this.setSpeedData.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   onChange(state, index, e) {
@@ -25,6 +27,23 @@ class Speed extends Component {
       newState[state] = newGeneral;
       this.setState(newState);
     }
+  }
+
+  setSpeedData() {
+    const data = JSON.stringify(this.state);
+    localStorage.setItem('speed', data);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.setSpeedData);
+  }
+
+  componentDidMount() {
+    const loadData = localStorage.getItem('speed');
+    if (loadData) {
+      this.setState(JSON.parse(loadData));
+    }
+    window.addEventListener('beforeunload', this.setSpeedData);
   }
 
   render() {

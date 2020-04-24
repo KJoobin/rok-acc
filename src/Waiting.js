@@ -11,10 +11,26 @@ class Waiting extends React.Component {
       support: '',
     };
     this.handleInput = this.handleInput.bind(this);
-    this.componentWillUnmount = this.componentWillUnmount.bind(this);
+    this.setWaitData = this.setWaitData.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
-  componentWillUnmount() {}
+  setWaitData() {
+    const data = JSON.stringify(this.state);
+    localStorage.setItem('wait', data);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.setWaitData);
+  }
+
+  componentDidMount() {
+    const loadData = localStorage.getItem('wait');
+    if (loadData) {
+      this.setState(JSON.parse(loadData));
+    }
+    window.addEventListener('beforeunload', this.setWaitData);
+  }
 
   handleInput(state, e) {
     const change = {};

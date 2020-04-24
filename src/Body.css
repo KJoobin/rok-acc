@@ -10,6 +10,7 @@
   border: 5px solid black;
 }
 .TimeInput input {
+  padding-right: 10px;
   width: 75px;
 }
 
@@ -24,10 +25,6 @@
 .Waiting input {
   margin: 0px 10px;
   width: 40px;
-  text-align: end;
-}
-input::placeholder {
-  text-align: center;
 }
 
 @media (min-width: 800px) {
