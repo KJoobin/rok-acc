@@ -22,7 +22,7 @@ class Speed extends Component {
   componentDidMount() {
     const loadData = localStorage.getItem('speed');
     if (loadData) {
-      this.setState(JSON.parse(loadData));
+      this.props.setInitial(JSON.parse(loadData));
     }
     window.addEventListener('beforeunload', this.setSpeedData);
   }

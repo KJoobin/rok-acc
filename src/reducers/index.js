@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { CHANGE_ACC } from '../actions/index';
+import { CHANGE_ACC, SET_SPEED_INITIAL } from '../actions/index';
 
 const initialArray = ['', '', '', '', '', '', '', '', '', '', '', '', ''];
 const initialAccState = {
@@ -19,6 +19,11 @@ function changeAcc(state = initialAccState, action) {
       array[action.index] = action.value;
       newState[action.category].data = array;
       return { ...state, ...newState };
+    case SET_SPEED_INITIAL:
+      return {
+        ...state,
+        ...action.data,
+      };
     default:
       return state;
   }
