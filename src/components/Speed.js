@@ -11,20 +11,24 @@ class Speed extends Component {
     }
     return (
       <div className="Speed">
-        {accs.map(category => (
-          <div key={category.type} className="speed-input">
-            <div>{category.title}가속</div>
-            {category.data.map((el, index) => (
-              <TimeInput
-                key={`${category.type}${index}`}
-                type={category.type}
-                index={index}
-                value={el}
-              />
-            ))}
-            <Calculate data={category.data} />
-          </div>
-        ))}
+        {accs.map(category => {
+          console.log('CATEGORY ', category);
+          console.log('DATA', category.data);
+          return (
+            <div key={category.type} className="speed-input">
+              <div>{category.title}가속</div>
+              {category.data.map((el, index) => (
+                <TimeInput
+                  key={`${category.type}${index}`}
+                  type={category.type}
+                  index={index}
+                  value={el}
+                />
+              ))}
+              <Calculate data={category.data} />
+            </div>
+          );
+        })}
         <div className="speed-input">
           <Waiting />
         </div>
