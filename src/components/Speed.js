@@ -12,8 +12,6 @@ class Speed extends Component {
     return (
       <div className="Speed">
         {accs.map(category => {
-          console.log('CATEGORY ', category);
-          console.log('DATA', category.data);
           return (
             <div key={category.type} className="speed-input">
               <div>{category.title}가속</div>
