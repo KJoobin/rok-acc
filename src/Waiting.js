@@ -42,7 +42,7 @@ class Waiting extends React.Component {
     accHours = Math.ceil(totalHours - accDays * 24);
     return (
       <div className="Waiting">
-        <div>업글레이드 시간 계산기</div>
+        <div>건축, 연구 시간 계산기</div>
         <div>
           <span>현재 걸리는 시간 : </span>
           <input
