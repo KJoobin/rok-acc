@@ -22,6 +22,7 @@ class Body extends Component {
 
   componentDidMount() {
     const loadData = localStorage.getItem('speed');
+    console.log(loadData);
     if (loadData) {
       this.props.setInitial(JSON.parse(loadData));
     }
