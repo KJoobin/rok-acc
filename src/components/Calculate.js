@@ -1,5 +1,5 @@
 import React from 'react';
-import { TIME_TO_MIN } from './constans';
+import { TIME_TO_MIN } from '../constans/constans';
 
 const Calculate = ({ data }) => {
   let cal = 0;

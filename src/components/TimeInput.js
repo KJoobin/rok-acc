@@ -1,5 +1,5 @@
 import React from 'react';
-import { TIME_TO_MIN, TIME_NAME } from './constans';
+import { TIME_TO_MIN, TIME_NAME } from '../constans/constans';
 
 const TimeInput = ({ type, index, value, onChange }) => {
   let cal = TIME_TO_MIN[index] * value;

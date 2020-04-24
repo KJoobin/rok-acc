@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, Switch, Route, useRouteMatch } from 'react-router-dom';
-import './Nav.css';
+import { Link, useRouteMatch } from 'react-router-dom';
+import '../style/Nav.css';
 
 const Nav = () => {
   return (

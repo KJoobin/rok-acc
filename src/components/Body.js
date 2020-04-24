@@ -1,7 +1,7 @@
 import React from 'react';
-import Speed from './Speed';
+import Speed from '../containers/SpeedContainer';
 import { Switch, Route } from 'react-router-dom';
-import './Body.css';
+import '../style/Body.css';
 
 const Body = props => {
   return (
