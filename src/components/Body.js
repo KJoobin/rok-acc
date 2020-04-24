@@ -22,8 +22,13 @@ class Body extends Component {
 
   componentDidMount() {
     const loadData = localStorage.getItem('speed');
-    console.log(loadData);
     if (loadData) {
+      const parseData = JSON.parse(loadData);
+      for (let key in parseData) {
+        if (!parseData[key].data) {
+          localStorage.removeItem('speed');
+        }
+      }
       this.props.setInitial(JSON.parse(loadData));
     }
     window.addEventListener('beforeunload', this.setSpeedData);
