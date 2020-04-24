@@ -19,10 +19,12 @@ class Speed extends Component {
 
   onChange(state, index, e) {
     const newGeneral = this.state[state].slice();
-    newGeneral[index] = e.target.value;
-    const newState = {};
-    newState[state] = newGeneral;
-    this.setState(newState);
+    if (e.target.value >= 0) {
+      newGeneral[index] = e.target.value;
+      const newState = {};
+      newState[state] = newGeneral;
+      this.setState(newState);
+    }
   }
 
   render() {

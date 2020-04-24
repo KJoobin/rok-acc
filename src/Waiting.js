@@ -18,7 +18,9 @@ class Waiting extends React.Component {
 
   handleInput(state, e) {
     const change = {};
-    change[state] = e.target.value;
+    if (e.target.value >= 0) {
+      change[state] = e.target.value;
+    }
     this.setState(change);
   }
   render() {
