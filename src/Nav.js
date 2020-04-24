@@ -1,28 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Switch, Route, useRouteMatch } from 'react-router-dom';
 import './Nav.css';
 
-const Nav = props => {
+const Nav = () => {
   return (
     <div className="Nav">
       <Link
-        to="/acc"
-        className={props.nav === 'speed' ? 'on' : 'off'}
-        onClick={() => props.onClick('speed')}
+        to="/"
+        className={useRouteMatch({ path: '/', exact: true }) ? 'on' : 'off'}
       >
         가속 계산기
       </Link>
       <Link
         to="/resource"
-        className={props.nav === 'money' ? 'on' : 'off'}
-        onClick={() => props.onClick('money')}
+        className={
+          useRouteMatch({ path: '/resource', exact: true }) ? 'on' : 'off'
+        }
       >
         자원 계산기
       </Link>
       <Link
         to="/training"
-        className={props.nav === 'soldier' ? 'on' : 'off'}
-        onClick={() => props.onClick('soldier')}
+        className={
+          useRouteMatch({ path: '/training', exact: true }) ? 'on' : 'off'
+        }
       >
         훈련 계산기
       </Link>
