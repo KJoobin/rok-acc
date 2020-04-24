@@ -4,29 +4,6 @@ import Calculate from './Calculate';
 import Waiting from '../containers/Waiting';
 
 class Speed extends Component {
-  constructor(props) {
-    super(props);
-    this.setSpeedData = this.setSpeedData.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);
-  }
-
-  setSpeedData() {
-    const data = JSON.stringify(this.props.acc);
-    localStorage.setItem('speed', data);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('beforeunload', this.setSpeedData);
-  }
-
-  componentDidMount() {
-    const loadData = localStorage.getItem('speed');
-    if (loadData) {
-      this.props.setInitial(JSON.parse(loadData));
-    }
-    window.addEventListener('beforeunload', this.setSpeedData);
-  }
-
   render() {
     const accs = [];
     for (let key in this.props.acc) {

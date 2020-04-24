@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Nav from './Nav';
-import Body from './Body';
+import Body from '../containers/BodyContainer';
 
 class App extends Component {
   render() {
