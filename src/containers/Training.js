@@ -8,11 +8,13 @@ class Training extends Component {
     super(props);
     this.state = {
       curSpeed: '',
+      useGeneralAcc: false,
       hasRoon: false,
       hasBuff: false,
       hasKingdomBuff: false,
     };
     this.onChange = this.onChange.bind(this);
+    this.toggleGeneralAcc = this.toggleGeneralAcc.bind(this);
     this.toggleRoon = this.toggleRoon.bind(this);
     this.toggleKingdomBuff = this.toggleKingdomBuff.bind(this);
     this.toggleBuff = this.toggleBuff.bind(this);
@@ -26,7 +28,9 @@ class Training extends Component {
       this.setState({ curSpeed: value });
     }
   }
-
+  toggleGeneralAcc() {
+    this.setState({ useGeneralAcc: !this.state.useGeneralAcc });
+  }
   toggleRoon() {
     this.setState({ hasRoon: !this.state.hasRoon });
   }
@@ -67,6 +71,11 @@ class Training extends Component {
           <span className={'colon'}> : </span>
           <Calculate data={this.props.acc} />
         </div>
+        <div className={'sub-title'}>
+          <span>현재 일반 가속</span>
+          <span className={'colon'}> : </span>
+          <Calculate data={this.props.generalAcc} />
+        </div>
         <div>
           <span>훈련속도(노버프) : </span>
           <input
@@ -76,6 +85,14 @@ class Training extends Component {
             placeholder="훈련 속도"
           />
           <span> %</span>
+        </div>
+        <div>
+          <span>+ 일반가속</span>
+          <input
+            type="checkbox"
+            name="generalAcc"
+            onChange={this.toggleGeneralAcc}
+          />
         </div>
         <div>
           <span>전고의 부적 V (+15%)</span>
@@ -94,7 +111,12 @@ class Training extends Component {
           <input type="checkbox" name="buff" onChange={this.toggleBuff} />
         </div>
         <div>
-          <TrainingCalculate acc={this.props.acc} cur={speed} />
+          <TrainingCalculate
+            acc={this.props.acc}
+            general={this.props.generalAcc}
+            useGeneral={this.state.useGeneralAcc}
+            cur={speed}
+          />
         </div>
       </div>
     );
@@ -104,6 +126,7 @@ class Training extends Component {
 const mapStateToProps = ({ changeAcc }) => {
   return {
     acc: changeAcc.training.data,
+    generalAcc: changeAcc.general.data,
   };
 };
 
