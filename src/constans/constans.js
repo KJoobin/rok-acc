@@ -28,3 +28,8 @@ export const TIME_NAME = [
   '7일',
   '30일',
 ];
+
+export const FOOD = [1000, 10000, 50000, 150000, 500000, 1500000, 5000000];
+export const WOOD = FOOD.slice();
+export const ROCK = [750, 7500, 37500, 112500, 375000, 1125000, 3750000];
+export const GOLD = [500, 3000, 15000, 50000, 200000, 600000, 2000000];

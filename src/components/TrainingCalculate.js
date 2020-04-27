@@ -1,5 +1,6 @@
 import React from 'react';
 import { TIME_TO_MIN } from '../constans/constans';
+import digits from '../helper/digits';
 
 const TrainingCalculate = ({ acc, cur, general, useGeneral }) => {
   let totalAcc = 0;
@@ -24,25 +25,7 @@ const TrainingCalculate = ({ acc, cur, general, useGeneral }) => {
       power = el * 10;
     }
     power = power.toString();
-    let soldier = '';
-    let index = 0;
-    for (let i = toString.length - 1; i >= 0; i -= 1) {
-      if (Math.floor(index / 3) === index / 3 && index !== 0) {
-        soldier = ',' + soldier;
-      }
-      soldier = toString[i] + soldier;
-      index += 1;
-    }
-    let combat = '';
-    index = 0;
-    for (let i = power.length - 1; i >= 0; i -= 1) {
-      if (Math.floor(index / 3) === index / 3 && index !== 0) {
-        combat = ',' + combat;
-      }
-      combat = power[i] + combat;
-      index += 1;
-    }
-    return { string: soldier, number: combat };
+    return { string: digits(toString), number: digits(power) };
   });
   return (
     <div className="TrainingCal">

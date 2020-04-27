@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TimeInput from '../containers/TimeInputContainer';
-import Calculate from './Calculate';
+import SpeedCalculate from './SpeedCalculate';
 import Waiting from '../containers/Waiting';
 
 class Speed extends Component {
@@ -14,7 +14,7 @@ class Speed extends Component {
         {accs.map(category => {
           return (
             <div key={category.type} className="speed-input">
-              <div>{category.title}가속</div>
+              <strong>{category.title}가속</strong>
               {category.data.map((el, index) => (
                 <TimeInput
                   key={`${category.type}${index}`}
@@ -23,7 +23,7 @@ class Speed extends Component {
                   value={el}
                 />
               ))}
-              <Calculate data={category.data} />
+              <SpeedCalculate data={category.data} />
             </div>
           );
         })}

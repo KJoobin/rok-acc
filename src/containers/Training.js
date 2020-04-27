@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Calculate from '../components/Calculate';
+import SpeedCalculate from '../components/SpeedCalculate';
 import TrainingCalculate from '../components/TrainingCalculate';
 
 class Training extends Component {
@@ -69,12 +69,12 @@ class Training extends Component {
         <div className={'sub-title'}>
           <span>현재 훈련 가속</span>
           <span className={'colon'}> : </span>
-          <Calculate data={this.props.acc} />
+          <SpeedCalculate data={this.props.acc} />
         </div>
         <div className={'sub-title'}>
           <span>현재 일반 가속</span>
           <span className={'colon'}> : </span>
-          <Calculate data={this.props.generalAcc} />
+          <SpeedCalculate data={this.props.generalAcc} />
         </div>
         <div>
           <span>훈련속도(노버프) : </span>

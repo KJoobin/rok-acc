@@ -1,5 +1,6 @@
 import React from 'react';
 import { TIME_TO_MIN } from '../constans/constans';
+import digits from '../helper/digits';
 
 const Calculate = ({ data }) => {
   let cal = 0;
@@ -20,7 +21,7 @@ const Calculate = ({ data }) => {
     <div>
       <div>
         {' '}
-        총 {days && `${days}일`}
+        총 {days && `${digits(days)}일`}
         {hour && `${hour}시간`}
         {cal > 0 && `${cal}분`}
       </div>

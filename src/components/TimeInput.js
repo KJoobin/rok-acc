@@ -1,6 +1,6 @@
 import React from 'react';
 import { TIME_TO_MIN, TIME_NAME } from '../constans/constans';
-
+import digits from '../helper/digits';
 const TimeInput = ({ type, index, value, onChange }) => {
   let cal = TIME_TO_MIN[index] * value;
   let days;
@@ -17,7 +17,7 @@ const TimeInput = ({ type, index, value, onChange }) => {
     <div className="TimeInput">
       <div>{TIME_NAME[index]}</div>
       <div>
-        {days && `${days}일`}
+        {days && `${digits(days)}일`}
         {hour && `${hour}시간`}
         {cal > 0 && `${cal}분`}
       </div>

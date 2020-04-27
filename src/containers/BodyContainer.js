@@ -1,10 +1,11 @@
 import Body from '../components/Body';
 import { connect } from 'react-redux';
-import { setSpeedInitial } from '../actions/index';
+import { setSpeedInitial, setResourceInitial } from '../actions/index';
 
 const mapStateToProps = state => {
   return {
     acc: state.changeAcc,
+    resource: state.changeResource,
   };
 };
 
@@ -13,6 +14,11 @@ const mapDispatchToProps = dispatch => {
     setInitial: data => {
       if (data) {
         dispatch(setSpeedInitial(data));
+      }
+    },
+    setResource: data => {
+      if (data) {
+        dispatch(setResourceInitial(data));
       }
     },
   };
