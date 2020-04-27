@@ -4,6 +4,7 @@ import {
   SET_SPEED_INITIAL,
   CHANGE_RESOURCE,
   SET_RESOURCE_INITIAL,
+  SELECT_RESOURCE,
 } from '../actions/index';
 
 const initialArray = ['', '', '', '', '', '', '', '', '', '', '', '', ''];
@@ -21,7 +22,7 @@ const initialResouceState = {
   wood: { title: '나무', data: initialArray.slice(0, 7) },
   rock: { title: '돌', data: initialArray.slice(0, 7) },
   gold: { title: '금화', data: initialArray.slice(0, 7) },
-  choice: { title: '선택', data: initialArray.slice(0, 4) },
+  choice: { title: '선택', choice: 'food', data: initialArray.slice(0, 4) },
 };
 
 function changeAcc(state = initialAccState, action) {
@@ -51,10 +52,16 @@ function changeResource(state = initialResouceState, action) {
       array[action.index] = action.value;
       newState[action.category].data = array;
       return { ...state, ...newState };
+    case SELECT_RESOURCE:
+      return {
+        ...state,
+        choice: { ...state.choice, choice: action.value },
+      };
     case SET_RESOURCE_INITIAL:
       return {
         ...state,
         ...action.data,
+        choice: { choice: 'food', ...state.choice, ...action.data.choice },
       };
     default:
       return state;

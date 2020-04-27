@@ -13,7 +13,6 @@ function ResourceCal({ data, category }) {
   }
   const total = data.reduce((acc, cur, index) => {
     if (cur) {
-      console.log(cur);
       return acc + cur * valueable[index];
     }
     return acc;

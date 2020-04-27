@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Resource from '../components/Resource';
-import { changeResource } from '../actions/index';
+import { changeResource, selectResource } from '../actions/index';
 
 const mapStateToProps = state => {
   return {
@@ -14,6 +14,9 @@ const mapDispatchToProps = dispatch => {
       if (value >= 0) {
         dispatch(changeResource(category, index, value));
       }
+    },
+    onSelect: value => {
+      dispatch(selectResource(value));
     },
   };
 };
