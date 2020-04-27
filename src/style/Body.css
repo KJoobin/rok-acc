@@ -85,6 +85,11 @@
     align-items: center;
     font-size: 40px;
   }
+  .Resource {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+  }
   .Training .colon {
     display: inline;
     margin: 0px 5px;
@@ -100,5 +105,8 @@
 @media (min-width: 1200px) {
   .Speed {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .Resource {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
