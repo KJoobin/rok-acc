@@ -3,6 +3,11 @@
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 5px;
 }
+.Speed {
+  display: grid;
+  grid-template-columns: 400px;
+  justify-content: center;
+}
 .speed-input {
   text-align: center;
   padding: 10px;
@@ -30,6 +35,12 @@
 .Waiting input {
   margin: 0px 10px;
   width: 40px;
+}
+
+.Resource {
+  display: grid;
+  grid-template-columns: 400px;
+  justify-content: center;
 }
 
 .Resource .resource-rayout {
@@ -70,10 +81,11 @@
   display: none;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 810px) {
   .Speed {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 400px 400px;
+    justify-content: center;
     grid-gap: 5px;
   }
   .Waiting div {
@@ -87,7 +99,7 @@
   }
   .Resource {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 400px 400px;
     grid-gap: 5px;
   }
   .Training .colon {
@@ -99,14 +111,5 @@
   }
   .Training .TrainingCal div {
     margin: 10px 0px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .Speed {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .Resource {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
