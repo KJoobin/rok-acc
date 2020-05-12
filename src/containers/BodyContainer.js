@@ -1,11 +1,12 @@
 import Body from '../components/Body';
 import { connect } from 'react-redux';
-import { setSpeedInitial, setResourceInitial } from '../actions/index';
+import { setSpeedInitial } from '../modules/acc';
+import { setResourceInitial } from '../modules/resource';
 
 const mapStateToProps = state => {
   return {
-    acc: state.changeAcc,
-    resource: state.changeResource,
+    acc: state.acc,
+    resource: state.resource,
   };
 };
 

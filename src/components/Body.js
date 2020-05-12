@@ -26,6 +26,10 @@ class Body extends Component {
   componentDidMount() {
     let loadSpeedData = localStorage.getItem('speed');
     let loadResourceData = localStorage.getItem('resource');
+    if (!loadSpeedData || !loadResourceData) {
+      localStorage.removeItem('speed');
+      localStorage.removeItem('resource');
+    }
     if (loadSpeedData) {
       const parseData = JSON.parse(loadSpeedData);
       for (let key in parseData) {

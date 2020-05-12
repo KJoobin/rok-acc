@@ -1,6 +1,6 @@
 import TimeInput from '../components/TimeInput';
 import { connect } from 'react-redux';
-import { changeAcc } from '../actions/index';
+import { changeAcc } from '../modules/acc';
 
 const mapDispatchToProps = dispatch => {
   return {

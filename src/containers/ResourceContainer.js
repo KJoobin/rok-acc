@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import Resource from '../components/Resource';
-import { changeResource, selectResource } from '../actions/index';
+import { changeResource, selectResource } from '../modules/resource';
 
 const mapStateToProps = state => {
   return {
-    resource: state.changeResource,
+    resource: state.resource,
   };
 };
 

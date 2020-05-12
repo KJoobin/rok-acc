@@ -123,10 +123,10 @@ class Training extends Component {
   }
 }
 
-const mapStateToProps = ({ changeAcc }) => {
+const mapStateToProps = ({ acc }) => {
   return {
-    acc: changeAcc.training.data,
-    generalAcc: changeAcc.general.data,
+    acc: acc.training.data,
+    generalAcc: acc.general.data,
   };
 };
 
