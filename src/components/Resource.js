@@ -80,7 +80,10 @@ function Resource({ resource, onChange, onSelect }) {
             />
           );
         })}
-        <ResourceCal data={resources[4].data} category={resources[4].choice} />
+        <ResourceCal
+          data={[0, ...resources[4].data]}
+          category={resources[4].choice}
+        />
       </div>
     </div>
   );
