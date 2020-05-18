@@ -42,15 +42,17 @@ class Waiting extends React.Component {
   render() {
     const { days, hours, cur, add, support } = this.state;
     let totalHours = Number(days) * 24 + Number(hours);
+    console.log(totalHours);
     let accDays = 0;
     let accHours = 0;
     totalHours *=
       (1 + Number(cur) / 100) / (1 + (Number(cur) + Number(add)) / 100);
+    console.log('after', totalHours);
     for (let i = 0; i < Number(support); i += 1) {
       if (totalHours * 60 * 0.01 > 3) {
         totalHours *= 0.99;
       } else {
-        totalHours -= 3;
+        totalHours -= 0.05;
       }
     }
     totalHours = totalHours > 0 ? totalHours : 0;
